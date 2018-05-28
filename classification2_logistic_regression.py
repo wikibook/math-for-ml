@@ -17,7 +17,7 @@ def standardize(x):
 
 train_z = standardize(train_x)
 
-# x1를 추가한다
+# x1을 추가한다
 def to_matrix(x):
     x1 = np.ones([x.shape[0], 1])
     return np.hstack([x1, x])
