@@ -17,10 +17,10 @@ def standardize(x):
 
 train_z = standardize(train_x)
 
-# x0를 추가한다
+# x1를 추가한다
 def to_matrix(x):
-    x0 = np.ones([x.shape[0], 1])
-    return np.hstack([x0, x])
+    x1 = np.ones([x.shape[0], 1])
+    return np.hstack([x1, x])
 
 X = to_matrix(train_z)
 
@@ -50,8 +50,8 @@ for _ in range(epoch):
     print('{}회째: theta = {}'.format(count, theta))
 
 # 그래프로 나타내서 확인한다
-x0 = np.linspace(-2, 2, 100)
+x1 = np.linspace(-2, 2, 100)
 plt.plot(train_z[train_y == 1, 0], train_z[train_y == 1, 1], 'o')
 plt.plot(train_z[train_y == 0, 0], train_z[train_y == 0, 1], 'x')
-plt.plot(x0, -(theta[0] + theta[1] * x0) / theta[2], linestyle='dashed')
+plt.plot(x1, -(theta[0] + theta[1] * x1) / theta[2], linestyle='dashed')
 plt.show()
